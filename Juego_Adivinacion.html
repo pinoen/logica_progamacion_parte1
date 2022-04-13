@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PROGRAMA JUEGO DE ADIVINACION</title>
+</head>
+
+<body>
+    <script>
+
+        function saltarLinea(){
+            document.write('<br>');
+            document.write('<br>');
+            document.write('<br>')
+            
+        }
+
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+
+        let numeroComputadora = loteria(100);
+        console.log(numeroComputadora);
+
+        let numeroUsuario = parseInt(prompt('Eliga un numero entre 1 y 100'));
+
+        if(numeroComputadora === numeroUsuario) imprimir('Felicitaciones! Ud acerto!');
+        if(numeroComputadora > numeroUsuario) imprimir('Numero equivocado. El numero que corresponde es mas grande.');
+        else imprimir('Numero equivocado. El numero que corresponde es mas chico.');
+
+
+        function loteria(n){
+            return Math.round(Math.random()*n);
+        }
+
+
+
+
+    </script>
+</body>
